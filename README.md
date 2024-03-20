@@ -1,4 +1,4 @@
-# Stablecoin
+# DeFi Stablecoin
 1.  Anchored or pegged to USD 
     1. Chinlink Price Feed
     2. Set a function to exhange the dollar equivalent.
@@ -23,21 +23,31 @@ forge build
 forge test
 ```
 
-# Deployment
+# For Anvil Deployment
+There is a deployment script set up in script/DeployDSC.s.sol
+
 ```shell
 
-# There is a deployment script set up in script/DeployDSC.s.sol
+# First initialize anvil
 
 1. $ Anvil
+```
 
-# For Anvil Deployment
-1.
+
+2.
+```
 Set up .env with ANVIL_RPC_URL, PRIVATE_KEY_ANVIL and DEFAULT_ANVIL_KEY
 
-2. 
-$ source .env
+```
 
 3. 
+```shell
+$ source .env
+
+```
+
+4. 
+```shell
 $ forge script script/DeployDSC.s.sol --rpc-url $ANVIL_RPC_URL --private-key $PRIVATE_KEY_ANVIL --broadcast
 
 ```
