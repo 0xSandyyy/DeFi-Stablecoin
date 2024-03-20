@@ -1,0 +1,22 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = ["@openzeppelin/contracts=lib/openzeppelin-contracts/contracts", "@chainlink/contracts=lib/chainlink-brownie-contracts/contracts/"]
+
+[invariant]
+runs = 128
+# how many calls in one run?
+depth = 128
+fail_on_revert = false
+# false is good for quick testing but it doesn't paint the whole picture.
+# true also doesn't make any sense as it just uses random but always breaks as the random inputs in most of the cases are not acceptable by the system.
+# both false and true mentioned above is for the case of open testing.
+
+# true just breaks but while invariant testing, if we make our handler too specific, we can may be have very less reverts but most of the time it's false.
+
+# we can always use true/false sequentially. if true, we can see the actual reason why it's reverting, and minimize that with the help of handler.
+
+# sometimes false is useful but always default to true
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
